@@ -1,0 +1,27 @@
+{
+    "name": "rcdosado/php-pskill",
+    "type": "Application",
+    "description": "A PHP wrapper around the Pskill from sysinternals.",
+    "keywords": ["pskill"],
+    "homepage": "https://github.com/rcdosado/php-pskill",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roy Cyril Dosado",
+            "email": "rcdosado@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/process": "~2.3|~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0|~5.0",
+        "psr/log": "~1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "PsKillWrapper": "src/"
+        }
+    }
+}

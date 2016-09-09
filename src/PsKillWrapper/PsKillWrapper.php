@@ -11,7 +11,7 @@ use Symfony\Component\Process\ExecutableFinder;
  */
 class PsKillWrapper
 {
-	 /**
+	/**
      * Path to the PsKill Binary.
      *
      * @var string
@@ -31,19 +31,13 @@ class PsKillWrapper
      */
     public function __construct($pskillBinary = null)
     {
-
-        if (null === $pskillBinary ) {
-
-            // @codeCoverageIgnoreStart
-            $finder = new ExecutableFinder();
-            $pskillBinary = $finder->find('pskill',null,array(__DIR__,'C:\\windows\\'); );
-
-            if (!$pskillBinary) {
-                throw new PsKillException('Unable to find the PsKill executable.');
+        if (null === $pskillBinary) {
+			$loc = $this::getPskillLoc();
+            if (!file_exists($loc)) {
+				throw new PskillException('Unable to find the Pskill executable.');
             }
-            // @codeCoverageIgnoreEnd
+			//@codeCoverageIgnoreEnd
         }
-
         $this->setPskillBinary($pskillBinary);
     }
 
@@ -63,12 +57,29 @@ class PsKillWrapper
 
     /**
      * Returns the path to the pskill binary.
-     *
+     * first checks if it exists to default directory
+	 * then if it exists, then it is set as pskillBinary
      * @return string
      */
     public function getPskillBinary()
     {
-        return $this->pskillBinary;
+		if($this->pskillBinary==NULL)
+		{
+			if(!file_exists($this::getPskillLoc()){
+				throw new PskillException('Unable to find the Pskill executable.');
+			   //@codeCoverageIgnoreEnd
+			}
+			$this->pskillBinary = $this::getPskillLoc();
+		}
+		return $this->pskillBinary;
     }
+
+	/*
+	 * Returns the assumed location of pskill
+	 */
+	 public static function getPskillLoc()
+	 {
+		 return __DIR__.'\\pskill.exe';
+	 }
 
 }

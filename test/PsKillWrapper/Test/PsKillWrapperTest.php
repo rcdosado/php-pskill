@@ -3,6 +3,7 @@
 namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
+use PsKillWrapper\PsKillException;
 
 
 class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
@@ -30,10 +31,9 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 
     public function testIfNoPsKillLocationGiven()
     {
-
-        $this->wrapper = new PsKillWrapper();
-
-        $this->assertEquals(__DIR__.'\pskill.exe', $this->wrapper->getPskillBinary());
+       $this->wrapper = new PsKillWrapper();
+	   $this->assertEquals(NULL,$this->wrapper->getPskillBinary());
     }
 
 }
+

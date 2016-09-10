@@ -4,6 +4,7 @@ namespace PsKillWrapper;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\ExecutableFinder;
+use PsKillWrapper\PskillException;
 
 /**
  * A wrapper class around the PsKill.
@@ -25,7 +26,7 @@ class PsKillWrapper
      *   The path to the pskill binary. Defaults to null, which uses Symfony's
      *   ExecutableFinder to resolve it automatically.
      *
-     * @throws \PsKill\PskillException
+     * @throws \PsKillWrapper\PskillException
      *   Throws an exception if the path to the Pskill binary couldn't be resolved
      *   by the ExecutableFinder class.
      */
@@ -33,10 +34,7 @@ class PsKillWrapper
     {
         if (null === $pskillBinary) {
 			$loc = $this::getPskillLoc();
-            if (!file_exists($loc)) {
-				throw new PskillException('Unable to find the Pskill executable.');
-            }
-			//@codeCoverageIgnoreEnd
+            $this->CheckIfExisting($loc);
         }
         $this->setPskillBinary($pskillBinary);
     }
@@ -44,10 +42,10 @@ class PsKillWrapper
     /**
      * Sets the path to the pskill binary.
      *
-     * @param string $gitBinary
+     * @param string $pskillBinary
      *   Path to the pskill binary.
      *
-     * @return PskillWrapper\PskillWrapper
+     * @return PsKillWrapper\PsKillWrapper
      */
     public function setPskillBinary($pskillBinary)
     {
@@ -65,10 +63,7 @@ class PsKillWrapper
     {
 		if($this->pskillBinary==NULL)
 		{
-			if(!file_exists($this::getPskillLoc()){
-				throw new PskillException('Unable to find the Pskill executable.');
-			   //@codeCoverageIgnoreEnd
-			}
+			if($this->IsPskillInDefaultDirectory())
 			$this->pskillBinary = $this::getPskillLoc();
 		}
 		return $this->pskillBinary;
@@ -77,9 +72,27 @@ class PsKillWrapper
 	/*
 	 * Returns the assumed location of pskill
 	 */
-	 public static function getPskillLoc()
+	 public function getPsKillLoc()
 	 {
 		 return __DIR__.'\\pskill.exe';
 	 }
+
+    /**
+     * @return bool
+     */
+    public function IsPskillInDefaultDirectory()
+    {
+        return file_exists($this::getPsKillLoc());
+    }
+
+    /**
+     * @param $loc
+     */
+    public function CheckIfExisting($loc)
+    {
+        if (!file_exists($loc)) {
+            throw new PskillException('Unable to find the Pskill executable.');
+        }
+    }
 
 }

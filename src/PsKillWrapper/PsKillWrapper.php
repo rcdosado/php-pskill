@@ -3,7 +3,6 @@
 namespace PsKillWrapper;
 
 use Symfony\Component\Process\Process;
-use Symfony\Component\Process\ExecutableFinder;
 use PsKillWrapper\PskillException;
 
 /**
@@ -95,4 +94,12 @@ class PsKillWrapper
         }
     }
 
+    public function printPsKillHelp(){
+        $loc = $this->getPsKillLoc();
+        $process = new Process($loc);
+        $process->run();
+
+        $ret = $process->getOutput();
+        return $ret!=NULL?$ret:NULL;
+    } 
 }

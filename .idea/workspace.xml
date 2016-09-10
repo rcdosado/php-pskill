@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7941dc71-e502-465c-9ea3-6489f6bd6fbf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/m1k3y.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php-pskill.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PsKillWrapper/PsKillWrapper.php" afterPath="$PROJECT_DIR$/src/PsKillWrapper/PsKillWrapper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php" afterPath="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php" />
     </list>
@@ -37,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PsKillWrapperTest.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PsKillWrapperTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33274022" vertical-offset="459" max-vertical-offset="1071">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            <state vertical-scroll-proportion="-19.0" vertical-offset="458" max-vertical-offset="1156">
+              <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
               <folding>
                 <element signature="e#38#70#0#PHP" expanded="true" />
               </folding>
@@ -49,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PsKillWrapper.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PsKillWrapper.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillWrapper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="22.23077" vertical-offset="1173" max-vertical-offset="1751">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.84875447" vertical-offset="1257" max-vertical-offset="1870">
+              <caret line="102" column="35" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
               <folding>
                 <element signature="e#33#71#0#PHP" expanded="true" />
               </folding>
@@ -277,7 +268,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1626" height="1058" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -333,22 +324,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillWrapper.php">
+    <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="22.23077" vertical-offset="1173" max-vertical-offset="1751">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state vertical-scroll-proportion="-19.0" vertical-offset="458" max-vertical-offset="1156">
+          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
           <folding>
-            <element signature="e#33#71#0#PHP" expanded="true" />
+            <element signature="e#38#70#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php">
+    <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillWrapper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33274022" vertical-offset="459" max-vertical-offset="1071">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.84875447" vertical-offset="1257" max-vertical-offset="1870">
+          <caret line="102" column="35" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
           <folding>
-            <element signature="e#38#70#0#PHP" expanded="true" />
+            <element signature="e#33#71#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

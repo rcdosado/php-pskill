@@ -51,7 +51,12 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
     }
 
 
-
+    public function testIfPsKillHelpIsDisplayed()
+    {
+        $this->wrapper = new PsKillWrapper();
+        $output = $this->wrapper->printPsKillHelp();
+        $this->assertNotNull($output);
+    }
 
 }
 

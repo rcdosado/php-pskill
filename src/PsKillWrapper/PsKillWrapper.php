@@ -3,7 +3,7 @@
 namespace PsKillWrapper;
 
 use Symfony\Component\Process\Process;
-use PsKillWrapper\PskillException;
+//use PsKillWrapper\PskillException;
 
 /**
  * A wrapper class around the PsKill.
@@ -11,6 +11,14 @@ use PsKillWrapper\PskillException;
  */
 class PsKillWrapper
 {
+
+   /**
+     * Symfony event dispatcher object used by this library to dispatch events.
+     *
+     * @var \Symfony\Component\EventDispatcher\EventDispatcherInterface
+     */
+    private $dispatcher;
+
 	/**
      * Path to the PsKill Binary.
      *
@@ -32,8 +40,7 @@ class PsKillWrapper
     public function __construct($pskillBinary = null)
     {
         if (null === $pskillBinary) {
-			$loc = $this::getPskillLoc();
-            $this->CheckIfExisting($loc);
+            $this->CheckIfExisting($this::getPskillLoc());
         }
         $this->setPskillBinary($pskillBinary);
     }
@@ -44,7 +51,7 @@ class PsKillWrapper
      * @param string $pskillBinary
      *   Path to the pskill binary.
      *
-     * @return PsKillWrapper\PsKillWrapper
+     * @return \PsKillWrapper\PsKillWrapper
      */
     public function setPskillBinary($pskillBinary)
     {
@@ -63,7 +70,7 @@ class PsKillWrapper
 		if($this->pskillBinary==NULL)
 		{
 			if($this->IsPskillInDefaultDirectory())
-			$this->pskillBinary = $this::getPskillLoc();
+			$this->pskillBinary = $this->getPskillLoc();
 		}
 		return $this->pskillBinary;
     }
@@ -95,11 +102,37 @@ class PsKillWrapper
     }
 
     public function printPsKillHelp(){
-        $loc = $this->getPsKillLoc();
-        $process = new Process($loc);
+        $process = new Process($this->getPsKillLoc());
         $process->run();
 
-        $ret = $process->getOutput();
-        return $ret!=NULL?$ret:NULL;
-    } 
+        return $process->getOutput();
+    }
+
+
+     /**
+     * Gets the dispatcher used by this library to dispatch events.
+     *
+     * @return \Symfony\Component\EventDispatcher\EventDispatcherInterface
+     */
+    public function getDispatcher()
+    {
+        if (!isset($this->dispatcher)) {
+            $this->dispatcher = new EventDispatcher();
+        }
+        return $this->dispatcher;
+    }
+
+    /**
+     * Sets the dispatcher used by this library to dispatch events.
+     *
+     * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $dispatcher
+     *   The Symfony event dispatcher object.
+     *
+     * @return \PsKillWrapper\GitWrapper
+     */
+    public function setDispatcher(EventDispatcherInterface $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+        return $this;
+    }
 }

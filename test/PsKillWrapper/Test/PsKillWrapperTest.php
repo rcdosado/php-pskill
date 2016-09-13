@@ -3,8 +3,7 @@
 namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
-use PsKillWrapper\PsKillException;
-
+use PsKillWrapper\Test\Event\TestDispatcher;
 
 class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 {
@@ -56,6 +55,20 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
         $this->wrapper = new PsKillWrapper();
         $output = $this->wrapper->printPsKillHelp();
         $this->assertNotNull($output);
+    }
+
+    public function testSetDispatcher()
+    {
+        $dispatcher = new TestDispatcher();
+        $this->wrapper->setDispatcher($dispatcher);
+        $this->assertEquals($dispatcher, $this->wrapper->getDispatcher());
+    }
+
+    public function testSetTimeout()
+    {
+        $timeout = mt_rand(1, 60);
+        $this->wrapper->setTimeout($timeout);
+        $this->assertEquals($timeout, $this->wrapper->getTimeout());
     }
 
 }

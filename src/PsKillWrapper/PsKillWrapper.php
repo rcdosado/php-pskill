@@ -27,7 +27,7 @@ class PsKillWrapper
     protected $pskillBinary;
 
     /**
-     * The timeout of the Git command in seconds, defaults to 60.
+     * The timeout of the Pskill command in seconds, defaults to 60.
      *
      * @var int
      */
@@ -143,12 +143,12 @@ class PsKillWrapper
     }
 
    /**
-     * Sets the timeout of the Git command.
+     * Sets the timeout of the PsKill command.
      *
      * @param int $timeout
      *   The timeout in seconds.
      *
-     * @return \PsKillWrapper\GitWrapper
+     * @return \PsKillWrapper\PsKillWrapper
      */
     public function setTimeout($timeout)
     {
@@ -157,7 +157,7 @@ class PsKillWrapper
     }
 
     /**
-     * Gets the timeout of the Git command.
+     * Gets the timeout of the pskill command.
      *
      * @return int
      *   The timeout in seconds.

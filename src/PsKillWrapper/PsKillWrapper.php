@@ -27,6 +27,13 @@ class PsKillWrapper
     protected $pskillBinary;
 
     /**
+     * The timeout of the Git command in seconds, defaults to 60.
+     *
+     * @var int
+     */
+    protected $timeout = 60;
+
+    /**
      * Constructs a PsKill object.
      *
      * @param string|null $pskillBinary
@@ -125,14 +132,40 @@ class PsKillWrapper
     /**
      * Sets the dispatcher used by this library to dispatch events.
      *
-     * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $dispatcher
-     *   The Symfony event dispatcher object.
+     * @param EventDispatcherInterface|\Symfony\Component\EventDispatcher\EventDispatcherInterface $dispatcher
      *
-     * @return \PsKillWrapper\GitWrapper
+     * @return \PsKillWrapper\PsKillWrapper
      */
     public function setDispatcher(EventDispatcherInterface $dispatcher)
     {
         $this->dispatcher = $dispatcher;
         return $this;
     }
+
+   /**
+     * Sets the timeout of the Git command.
+     *
+     * @param int $timeout
+     *   The timeout in seconds.
+     *
+     * @return \PsKillWrapper\GitWrapper
+     */
+    public function setTimeout($timeout)
+    {
+        $this->timeout = (int) $timeout;
+        return $this;
+    }
+
+    /**
+     * Gets the timeout of the Git command.
+     *
+     * @return int
+     *   The timeout in seconds.
+     */
+    public function getTimeout()
+    {
+        return $this->timeout;
+    }
+
+
 }

@@ -4,4 +4,6 @@ namespace PsKillWrapper\Test\Event;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class TestDispatcher extends EventDispatcher {}
+class TestDispatcher extends EventDispatcher {
+
+}

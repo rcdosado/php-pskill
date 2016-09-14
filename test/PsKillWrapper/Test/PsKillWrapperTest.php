@@ -18,12 +18,12 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp() {
       parent::setUp();
-
+      $this->wrapper = new PsKillWrapper();
     }
     public function testIfGetSetBinaryLocationCorrect()
     {
 		$binary = 'c:\\windows\\pskill.exe';
-        $this->wrapper = new PsKillWrapper($binary);       
+        $this->wrapper->setPskillBinary($binary);
         $this->assertEquals($binary, $this->wrapper->getPskillBinary());
     }
 
@@ -40,19 +40,15 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
     public function testPsKillException()
     {
         $dummy = 'c:\\some\\foo\\location';
-        $this->wrapper = new PsKillWrapper();
         $this->wrapper->CheckIfExisting($dummy);
     }
     public function testIfNoPsKillLocationGiven()
     {
-       $this->wrapper = new PsKillWrapper();
 	   $this->assertEquals($this->wrapper->getPsKillLoc(),$this->wrapper->getPskillBinary());
     }
 
-
     public function testIfPsKillHelpIsDisplayed()
     {
-        $this->wrapper = new PsKillWrapper();
         $output = $this->wrapper->printPsKillHelp();
         $this->assertNotNull($output);
     }

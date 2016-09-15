@@ -3,7 +3,13 @@
 namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
-use PsKillWrapper\Test\Event\TestDispatcher;
+
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
+
+class TestDispatcher extends EventDispatcher {
+
+}
 
 class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 {

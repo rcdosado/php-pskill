@@ -37,6 +37,12 @@ class PsKillWrapper
     protected $timeout = 60;
 
     /**
+     * An array of options passed to the proc_open() function.
+     *
+     * @var array
+     */
+    protected $procOptions = array();
+    /**
      * Constructs a PsKill object.
      *
      * @param string|null $pskillBinary
@@ -168,6 +174,30 @@ class PsKillWrapper
     public function getTimeout()
     {
         return $this->timeout;
+    }
+
+    /**
+     * Sets the options passed to proc_open() when executing the PsKill command.
+     *
+     * @param array $timeout
+     *   The options passed to proc_open().
+     *
+     * @return \PsKillWrapper\GitWrapper
+     */
+    public function setProcOptions(array $options)
+    {
+        $this->procOptions = $options;
+        return $this;
+    }
+
+    /**
+     * Gets the options passed to proc_open() when executing the PsKill command.
+     *
+     * @return array
+     */
+    public function getProcOptions()
+    {
+        return $this->procOptions;
     }
 
 

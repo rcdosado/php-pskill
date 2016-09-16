@@ -72,5 +72,14 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($timeout, $this->wrapper->getTimeout());
     }
 
+    public function testProcOptions()
+    {
+        $value = (bool)mt_rand(0, 1);
+        $options = array('suppress_errors' => $value);
+        $this->wrapper->setProcOptions($options);
+        $this->assertEquals($options, $this->wrapper->getProcOptions());
+
+    }
+
 }
 

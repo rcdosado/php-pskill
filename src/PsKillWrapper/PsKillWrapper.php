@@ -5,6 +5,7 @@ namespace PsKillWrapper;
 //use PsKillWrapper\PskillException;
 use Symfony\Component\Process\Process;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 
 /**

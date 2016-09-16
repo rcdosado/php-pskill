@@ -5,6 +5,8 @@ namespace PsKillWrapper\Test;
 use PsKillWrapper\PsKillWrapper;
 use PsKillWrapper\Test\Event\TestDispatcher;
 
+include_once('event\TestDispatcher.php');
+
 class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 {
 

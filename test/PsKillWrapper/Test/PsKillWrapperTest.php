@@ -3,13 +3,7 @@
 namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
-
-use Symfony\Component\EventDispatcher\EventDispatcher;
-
-
-class TestDispatcher extends EventDispatcher {
-
-}
+use PsKillWrapper\Test\Event\TestDispatcher;
 
 class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 {
@@ -59,6 +53,9 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($output);
     }
 
+    /**
+     *
+     */
     public function testSetDispatcher()
     {
         $dispatcher = new TestDispatcher();

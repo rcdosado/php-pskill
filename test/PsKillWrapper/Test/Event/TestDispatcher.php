@@ -1,6 +1,6 @@
 <?php
 
-namespace PsKillWrapper\Event\Test;
+namespace PsKillWrapper\Test\Event;
 
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

@@ -7,5 +7,5 @@ if (!file_exists($autoloadFile)) {
 require_once $autoloadFile;
 
 $loader = new \Composer\Autoload\ClassLoader();
-$loader->add('PsKillWrapper\Test', 'test');
+$loader->add('PsKillWrapper\Test', 'Test');
 $loader->register();

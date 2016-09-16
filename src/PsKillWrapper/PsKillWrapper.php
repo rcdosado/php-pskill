@@ -2,8 +2,10 @@
 
 namespace PsKillWrapper;
 
-use Symfony\Component\Process\Process;
 //use PsKillWrapper\PskillException;
+use Symfony\Component\Process\Process;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
 
 /**
  * A wrapper class around the PsKill.

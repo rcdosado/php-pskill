@@ -200,5 +200,48 @@ class PsKillWrapper
         return $this->procOptions;
     }
 
+     /**
+     * Returns the version of the installed Git client.
+     *
+     * @return string
+     *
+     * @throws \PsKillWrapper\PsKillException
+     */
+    public function version()
+    {
+        return $this->pskill('--version');
+    }
+
+
+     /**
+     * Runs an arbitrary PsKill command.
+     *
+     * The command is simply a raw command line entry for everything after the
+     * PsKill binary. For example, a `pskill config -l` command would be passed as
+     * `config -l` via the first argument of this method.
+     *
+     * Note that no events are thrown by this method.
+     *
+     * @param string $commandLine
+     *   The raw command containing the PsKill options and arguments. The PsKill
+     *   binary should not be in the command, for example `pskill config -l` would
+     *   translate to "config -l".
+     * @param string|null $cwd
+     *   The working directory of the PsKill process. Defaults to null which uses
+     *   the current working directory of the PHP process.
+     *
+     * @return string
+     *   The STDOUT returned by the PsKill command.
+     *
+     * @throws \PsKillWrapper\PsKillException
+     *
+     * @see PsKillWrapper::run()
+     */
+    public function pskill($commandLine, $cwd = null)
+    {
+        $command = GitCommand::getInstance($commandLine);
+        $command->setDirectory($cwd);
+        return $this->run($command);
+    }
 
 }

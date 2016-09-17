@@ -81,5 +81,12 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    public function testPsKillVersion()
+    {
+        $version = $this->wrapper->version();
+        $this->assertPsKillVersion();
+
+    }
+
 }
 

@@ -9,6 +9,12 @@
 namespace PsKillWrapper\Event;
 
 
-class PsKillEvents {
+final class PsKillEvents {
+
+    const PSKILL_OUTPUT = 'pskill.command.output';
+
+    const PSKILL_SUCCESS = 'pskill.command.success';
+
+    const PSKILL_ERROR = 'pskill.command.error';
 
 } 

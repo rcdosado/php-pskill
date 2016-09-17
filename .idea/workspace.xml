@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7941dc71-e502-465c-9ea3-6489f6bd6fbf" name="Default" comment="kkkkkkkkkk">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php" afterPath="$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php" afterPath="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php" />
     </list>
     <ignored path="php-pskill.iws" />
@@ -54,8 +55,8 @@
           <file leaf-file-name="PsKillCommand.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6730769" vertical-offset="4407" max-vertical-offset="5168">
-                  <caret line="286" column="35" selection-start-line="286" selection-start-column="35" selection-end-line="286" selection-end-column="35" />
+                <state vertical-scroll-proportion="-1.0754437" vertical-offset="4059" max-vertical-offset="5236">
+                  <caret line="196" column="31" selection-start-line="196" selection-start-column="31" selection-end-line="196" selection-end-column="31" />
                   <folding>
                     <element signature="e#6#88#0#PHP" expanded="true" />
                   </folding>
@@ -134,8 +135,8 @@
           <file leaf-file-name="PsKillCommandTest.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.9268293" vertical-offset="68" max-vertical-offset="850">
-                  <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.34146342" vertical-offset="391" max-vertical-offset="1088">
+                  <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -178,8 +179,8 @@
         <option value="$PROJECT_DIR$/test/PsKillWrapper/Test/Event/TestBypassListener.php" />
         <option value="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTestCase.php" />
         <option value="$PROJECT_DIR$/src/PsKillWrapper/PsKillWrapper.php" />
-        <option value="$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php" />
         <option value="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php" />
+        <option value="$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php" />
       </list>
     </option>
   </component>
@@ -923,8 +924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6730769" vertical-offset="4407" max-vertical-offset="5168">
-          <caret line="286" column="35" selection-start-line="286" selection-start-column="35" selection-end-line="286" selection-end-column="35" />
+        <state vertical-scroll-proportion="-1.0754437" vertical-offset="4059" max-vertical-offset="5236">
+          <caret line="196" column="31" selection-start-line="196" selection-start-column="31" selection-end-line="196" selection-end-column="31" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
           </folding>
@@ -933,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9268293" vertical-offset="68" max-vertical-offset="850">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.34146342" vertical-offset="391" max-vertical-offset="1088">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
           <folding />
         </state>
       </provider>

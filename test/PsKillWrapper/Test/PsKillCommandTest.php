@@ -47,4 +47,18 @@ class PsKillCommandTest extends PsKillWrapperTestCase
         $pskill->unsetOption($optionName);
         $this->assertNull($pskill->getOption($optionName));
     }
+
+    /**
+     *
+     */
+    public function testMultiOption()
+    {
+        $pskill = PsKillCommand::getInstance('test-command')
+            ->setOption('test-arg', array(true, true));
+
+        $expected = 'test-command --test-arg --test-arg';
+        $commandLine = $pskill->getCommandLine();
+
+        $this->assertEquals($expected, $commandLine);
+    }
 } 

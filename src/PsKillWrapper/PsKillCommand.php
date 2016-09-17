@@ -13,6 +13,10 @@ use Symfony\Component\Process\ProcessUtils;
 /*
  * Base class extended by all PsKill Command Classes
  */
+
+/**
+ * @property mixed bypass
+ */
 class PsKillCommand
 {
      /**

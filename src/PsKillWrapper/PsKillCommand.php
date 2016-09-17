@@ -74,4 +74,26 @@ class PsKillCommand
             }
         }
     }
+
+    /**
+     * Constructs a PsKillCommand object.
+     *
+     * Accepts a variable number of arguments to model the arguments passed to
+     * the Pskill command line utility. If the last argument is an array, it is
+     * passed as the command options.
+     *
+     * @param string $command
+     *   The Pskill command being run
+     * @param string ...
+     *   Zero or more arguments passed to the Pskill command.
+     * @param array $options
+     *   An optional array of arguments to pass to the command.
+     *
+     * @return \PsKillWrapper\PsKillCommand
+     */
+    public static function getInstance()
+    {
+        $args = func_get_args();
+        return new static($args);
+    }
 }

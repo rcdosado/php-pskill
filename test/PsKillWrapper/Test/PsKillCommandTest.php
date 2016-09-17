@@ -33,4 +33,18 @@ class PsKillCommandTest extends PsKillWrapperTestCase
         $this->assertEquals($expected, $commandLine);
 //        $this->assertEquals(1, 1);
     }
+
+    public function testOption()
+    {
+        $optionName = $this->randomString();
+        $optionValue = $this->randomString();
+
+        $pskill = PsKillCommand::getInstance()
+            ->setOption($optionName, $optionValue);
+
+        $this->assertEquals($optionValue, $pskill->getOption($optionName));
+
+        $pskill->unsetOption($optionName);
+        $this->assertNull($pskill->getOption($optionName));
+    }
 } 

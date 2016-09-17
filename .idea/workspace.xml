@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7941dc71-e502-465c-9ea3-6489f6bd6fbf" name="Default" comment="kkkkkkkkkk">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php" afterPath="$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php" afterPath="$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/m1k3y.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/m1k3y.xml" />
     </list>
     <ignored path="php-pskill.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +54,8 @@
           <file leaf-file-name="PsKillCommand.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.27071005" vertical-offset="4407" max-vertical-offset="5168">
-                  <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.6730769" vertical-offset="4407" max-vertical-offset="5168">
+                  <caret line="286" column="35" selection-start-line="286" selection-start-column="35" selection-end-line="286" selection-end-column="35" />
                   <folding>
                     <element signature="e#6#88#0#PHP" expanded="true" />
                   </folding>
@@ -136,8 +134,8 @@
           <file leaf-file-name="PsKillCommandTest.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.58536583" vertical-offset="0" max-vertical-offset="697">
-                  <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+                <state vertical-scroll-proportion="0.9268293" vertical-offset="68" max-vertical-offset="850">
+                  <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -893,22 +891,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6538463" vertical-offset="906" max-vertical-offset="1666">
-          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
-          <folding>
-            <element signature="e#38#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTestCase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-42.846153" vertical-offset="25" max-vertical-offset="1564">
           <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
           <folding>
             <element signature="e#38#75#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillWrapperTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.6538463" vertical-offset="906" max-vertical-offset="1666">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
+          <folding>
+            <element signature="e#38#70#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -925,8 +923,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PsKillWrapper/PsKillCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27071005" vertical-offset="4407" max-vertical-offset="5168">
-          <caret line="270" column="5" selection-start-line="270" selection-start-column="5" selection-end-line="270" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.6730769" vertical-offset="4407" max-vertical-offset="5168">
+          <caret line="286" column="35" selection-start-line="286" selection-start-column="35" selection-end-line="286" selection-end-column="35" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
           </folding>
@@ -935,8 +933,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/PsKillWrapper/Test/PsKillCommandTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58536583" vertical-offset="0" max-vertical-offset="697">
-          <caret line="29" column="81" selection-start-line="29" selection-start-column="81" selection-end-line="29" selection-end-column="81" />
+        <state vertical-scroll-proportion="0.9268293" vertical-offset="68" max-vertical-offset="850">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding />
         </state>
       </provider>

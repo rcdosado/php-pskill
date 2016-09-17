@@ -5,6 +5,7 @@ namespace PsKillWrapper\Test;
 use PsKillWrapper\Event\PsKillEvents;
 use PsKillWrapper\PsKillWrapper;
 use Symfony\Component\Filesystem\Filesystem;
+use PsKillWrapper\Test\Event\TestListener;
 
 class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
 {
@@ -50,6 +51,23 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
             $str .= chr($values[mt_rand(0, $max)]);
         }
         return $str;
+    }
+     /**
+     * Adds the test listener for all events, returns the listener.
+     *
+     * @return \PsKillWrapper\Test\Event\TestListener
+     */
+    public function addListener()
+    {
+        $dispatcher = $this->wrapper->getDispatcher();
+        $listener = new TestListener();
+
+        $dispatcher->addListener(GitEvents::GIT_PREPARE, array($listener, 'onPrepare'));
+        $dispatcher->addListener(GitEvents::GIT_SUCCESS, array($listener, 'onSuccess'));
+        $dispatcher->addListener(GitEvents::GIT_ERROR, array($listener, 'onError'));
+        $dispatcher->addListener(GitEvents::GIT_BYPASS, array($listener, 'onBypass'));
+
+        return $listener;
     }
 
 }

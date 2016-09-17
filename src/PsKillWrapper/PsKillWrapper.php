@@ -239,7 +239,7 @@ class PsKillWrapper
      */
     public function pskill($commandLine, $cwd = null)
     {
-        $command = GitCommand::getInstance($commandLine);
+        $command = PsKillCommand::getInstance($commandLine);
         $command->setDirectory($cwd);
         return $this->run($command);
     }

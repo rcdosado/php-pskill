@@ -243,5 +243,18 @@ class PsKillWrapper
         $command->setDirectory($cwd);
         return $this->run($command);
     }
-
+    /**
+     * Returns true if the PsKill command should be run.
+     *
+     * The return value is the boolean opposite $this->bypass. Although this
+     * seems complex, it makes the code more readable when checking whether the
+     * command should be run or not.
+     *
+     * @return boolean
+     *   If true, the command should be run.
+     */
+    public function notBypassed()
+    {
+        return !$this->bypass;
+    }
 }

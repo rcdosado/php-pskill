@@ -7,6 +7,8 @@ use PsKillWrapper\PsKillWrapper;
 use Symfony\Component\Filesystem\Filesystem;
 use PsKillWrapper\Test\Event\TestListener;
 
+include_once('event\TestListener.php');
+
 class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
 {
     const CONFIG_EMAIL = 'rcdosado@gmail.com';
@@ -62,10 +64,10 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
         $dispatcher = $this->wrapper->getDispatcher();
         $listener = new TestListener();
 
-        $dispatcher->addListener(GitEvents::GIT_PREPARE, array($listener, 'onPrepare'));
-        $dispatcher->addListener(GitEvents::GIT_SUCCESS, array($listener, 'onSuccess'));
-        $dispatcher->addListener(GitEvents::GIT_ERROR, array($listener, 'onError'));
-        $dispatcher->addListener(GitEvents::GIT_BYPASS, array($listener, 'onBypass'));
+        $dispatcher->addListener(PsKillEvents::PSKILL_PREPARE, [$listener, 'onPrepare']);
+        $dispatcher->addListener(PsKillEvents::PSKILL_SUCCESS, [$listener, 'onSuccess']);
+        $dispatcher->addListener(PsKillEvents::PSKILL_ERROR, [$listener, 'onError']);
+        $dispatcher->addListener(PsKillEvents::PSKILL_BYPASS, [$listener, 'onBypass']);
 
         return $listener;
     }

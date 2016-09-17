@@ -4,6 +4,7 @@ namespace PsKillWrapper\Test;
 
 use PsKillWrapper\Event\PsKillEvents;
 use PsKillWrapper\PsKillWrapper;
+use PsKillWrapper\Test\Event\TestBypassListener;
 use Symfony\Component\Filesystem\Filesystem;
 use PsKillWrapper\Test\Event\TestListener;
 
@@ -71,5 +72,16 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
 
         return $listener;
     }
-
+   /**
+     * Adds the bypass listener so that Git commands are not run.
+     *
+     * @return \PsKillWrapper\Test\Event\TestBypassListener
+     */
+    public function addBypassListener()
+    {
+        $listener = new TestBypassListener();
+        $dispatcher = $this->wrapper->getDispatcher();
+        $dispatcher->addListener(PsKillEvents::PSKILL_PREPARE, array($listener, 'onPrepare'), -5);
+        return $listener;
+    }
 }

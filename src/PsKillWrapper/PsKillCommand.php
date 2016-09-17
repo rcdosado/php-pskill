@@ -96,4 +96,56 @@ class PsKillCommand
         $args = func_get_args();
         return new static($args);
     }
+
+    /**
+     * Returns PsKill command being run
+     *
+     * @return string
+     */
+    public function getCommand()
+    {
+        return $this->command;
+    }
+
+    /**
+     * Sets the path to the directory containing the working copy.
+     *
+     * @param string $directory
+     *   The path to the directory containing the working copy.
+     *
+     * @return \PsKillWrapper\PsKillCommand
+     */
+    public function setDirectory($directory)
+    {
+        $this->directory = $directory;
+        return $this;
+    }
+
+    /**
+     * Gets the path to the directory containing the working copy.
+     *
+     * @return string|null
+     *   The path, null if no path is set.
+     */
+    public function getDirectory()
+    {
+        return $this->directory;
+    }
+
+    /**
+     * A boolean flagging whether to skip running the command.
+     *
+     * @param boolean $bypass
+     *   Whether to bypass execution of the command. The parameter defaults to
+     *   true for code readability, however the default behavior of this class
+     *   is to run the command.
+     *
+     * @return \PsKillWrapper\PsKillCommand
+     */
+    public function bypass($bypass = true)
+    {
+        $this->bypass = (bool) $bypass;
+        return $this;
+    }
+
 }

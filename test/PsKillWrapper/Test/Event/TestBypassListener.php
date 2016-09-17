@@ -7,8 +7,12 @@
  */
 
 namespace PsKillWrapper\Test\Event;
-
+use PsKillWrapper\Event\PsKillEvent;
 
 class TestBypassListener {
+
+    public function onPrepare(PsKillEvent $event){
+       $event->getCommand()->bypass();
+    }
 
 } 

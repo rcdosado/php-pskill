@@ -256,7 +256,7 @@ class PsKillCommand
     /**
      * Unsets a command line option.
      *
-     * @param string $option
+     * @param string $optione
      *   The option name, e.g. "branch", "q".
      *
      * @return \PsKillWrapper\PsKillCommand

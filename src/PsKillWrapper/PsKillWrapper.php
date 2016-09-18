@@ -182,7 +182,7 @@ class PsKillWrapper
      * @param array $timeout
      *   The options passed to proc_open().
      *
-     * @return \PsKillWrapper\GitWrapper
+     * @return \PsKillWrapper\PsKillWrapper
      */
     public function setProcOptions(array $options)
     {
@@ -201,7 +201,7 @@ class PsKillWrapper
     }
 
      /**
-     * Returns the version of the installed Git client.
+     * Returns the version of the installed PsKill client.
      *
      * @return string
      *
@@ -209,7 +209,10 @@ class PsKillWrapper
      */
     public function version()
     {
-        return $this->pskill('--version');
+        // PsKill\sv[1-9]\.[0-9][0-9]
+        // this is the regex to search for from PsKill
+        // must return the version after getting from help file
+        return $this->pskill("");
     }
 
 
@@ -242,6 +245,32 @@ class PsKillWrapper
         $command = PsKillCommand::getInstance($commandLine);
         $command->setDirectory($cwd);
         return $this->run($command);
+    }
+
+    /**
+     * Runs a Pskill command.
+     *
+     * @param PsKillCommand|PsKillCommand $command
+     *   The PsKill command being executed.
+     * @param string|null $cwd
+     *   Explicitly specify the working directory of the PsKill process. Defaults
+     *   to null which automatically sets the working directory based on the
+     *   command being executed relative to the working copy.
+     *
+     * @return string
+     *   The STDOUT returned by the PsKill command.
+     *
+     * @see Process
+     */
+    public function run(PsKillCommand $command, $cwd = null)
+    {
+        $wrapper = $this;
+        $process = new PsKillProcess($this, $command, $cwd);
+        $process->run(function ($type, $buffer) use ($wrapper, $process, $command) {
+            $event = new Event\PsKillOutputEvent($wrapper, $process, $command, $type, $buffer);
+            $wrapper->getDispatcher()->dispatch(Event\PsKillEvents::PSKILL_OUTPUT, $event);
+        });
+        return $command->notBypassed() ? $process->getOutput() : '';
     }
     /**
      * Returns true if the PsKill command should be run.

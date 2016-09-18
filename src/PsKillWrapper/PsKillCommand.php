@@ -49,6 +49,12 @@ class PsKillCommand
      */
     protected $args = array();
 
+    /**
+     * Whether command execution should be bypassed.
+     *
+     * @var boolean
+     */
+    protected $bypass = false;
 
    /**
      * Constructs a PsKillCommand object.

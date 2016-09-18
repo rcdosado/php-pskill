@@ -50,7 +50,7 @@ class PsKillProcess extends Process{
 //        if (!$env) {
 //            $env = null;
 //        }
-        $env = "";
+        $env = [];
         parent::__construct($commandLine, $cwd, $env, null, $pskill->getTimeout(), $pskill->getProcOptions());
     }
 

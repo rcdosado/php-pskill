@@ -212,7 +212,10 @@ class PsKillWrapper
         // PsKill\sv[1-9]\.[0-9][0-9]
         // this is the regex to search for from PsKill
         // must return the version after getting from help file
-        return $this->pskill("");
+        $out = $this->pskill("");
+        preg_match('^PsKill\sv[1-9]\.[0-9][0-9]', $out, $m);
+
+        return $m;
     }
 
 

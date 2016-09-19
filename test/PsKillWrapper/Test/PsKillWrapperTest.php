@@ -4,6 +4,9 @@ namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
 use PsKillWrapper\Test\Event\TestDispatcher;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\ProcessUtils;
 
 include_once('event\TestDispatcher.php');
 
@@ -84,7 +87,11 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
     public function testPsKillVersion()
     {
         $version = $this->wrapper->version();
-        $this->assertPsKillVersion();
+        print_r($version);
+//       $this->assertPsKillVersion($version);
+
+//         $user_data_source = 'C:\\dev\\projects\\php-pskill\\src\\PsKillWrapper\\pskill.exe';
+//         $user_data_source = '..\..\..\src\PsKillWrapper\pskill';
 
     }
 

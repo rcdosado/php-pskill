@@ -32,7 +32,10 @@ class PsKillProcess extends Process{
 
         // Build the command line options, flags, and arguments.
         $binary = ProcessUtils::escapeArgument($pskill->getPsKillBinary());
+
+        // echo "\n\nthe binary : ".$binary;
         $commandLine = rtrim($binary . ' ' . $command->getCommandLine());
+        // echo "\n\nthe commandline : ".$commandLine;
 
         // Resolve the working directory of the PsKill process. Use the directory
         // in the command object if it exists.
@@ -46,10 +49,10 @@ class PsKillProcess extends Process{
 
         // Finalize the environment variables, an empty array is converted
         // to null which enherits the environment of the PHP process.
-//        $env = $pskill->getEnvVars();
-//        if (!$env) {
-//            $env = null;
-//        }
+        //        $env = $pskill->getEnvVars();
+        //        if (!$env) {
+        //            $env = null;
+        //        }
         $env = [];
         parent::__construct($commandLine, $cwd, $env, null, $pskill->getTimeout(), $pskill->getProcOptions());
     }

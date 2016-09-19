@@ -22,6 +22,12 @@ class PsKillWrapper
      */
     private $dispatcher;
 
+
+    /*
+     * This holds error output whenever pskill command is run
+     */
+    private $error_output;
+
 	/**
      * Path to the PsKill Binary.
      *
@@ -179,8 +185,8 @@ class PsKillWrapper
     /**
      * Sets the options passed to proc_open() when executing the PsKill command.
      *
-     * @param array $timeout
-     *   The options passed to proc_open().
+     * @param array $options
+     * @internal param array $timeout The options passed to proc_open().*   The options passed to proc_open().
      *
      * @return \PsKillWrapper\PsKillWrapper
      */
@@ -212,8 +218,13 @@ class PsKillWrapper
         // PsKill\sv[1-9]\.[0-9][0-9]
         // this is the regex to search for from PsKill
         // must return the version after getting from help file
-        $out = $this->pskill("");
-        preg_match('^PsKill\sv[1-9]\.[0-9][0-9]', $out, $m);
+
+        $this->pskill('DUMMY');
+        $m = ["PsKill v1.xx"];
+        echo $this->error_output;
+
+        if($this->error_output)
+           preg_match('/^PsKill\sv[1-9]\.[0-9][0-9]/', $this->error_output, $m);
 
         return $m;
     }
@@ -273,20 +284,8 @@ class PsKillWrapper
             $event = new Event\PsKillOutputEvent($wrapper, $process, $command, $type, $buffer);
             $wrapper->getDispatcher()->dispatch(Event\PsKillEvents::PSKILL_OUTPUT, $event);
         });
+        $this->error_output = $process->getErrorOutput();
         return $command->notBypassed() ? $process->getOutput() : '';
     }
-    /**
-     * Returns true if the PsKill command should be run.
-     *
-     * The return value is the boolean opposite $this->bypass. Although this
-     * seems complex, it makes the code more readable when checking whether the
-     * command should be run or not.
-     *
-     * @return boolean
-     *   If true, the command should be run.
-     */
-    public function notBypassed()
-    {
-        return !$this->bypass;
-    }
+
 }

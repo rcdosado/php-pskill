@@ -73,7 +73,7 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
         return $listener;
     }
    /**
-     * Adds the bypass listener so that Git commands are not run.
+     * Adds the bypass listener so that PsKill commands are not run.
      *
      * @return \PsKillWrapper\Test\Event\TestBypassListener
      */
@@ -83,5 +83,17 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
         $dispatcher = $this->wrapper->getDispatcher();
         $dispatcher->addListener(PsKillEvents::PSKILL_PREPARE, array($listener, 'onPrepare'), -5);
         return $listener;
+    }
+
+    /**
+     * Asserts a correct PsKill version string was returned.
+     *
+     * @param type $version
+     *   The version returned by the USAGE output which contains the version
+     */
+    public function assertPsKillVersion($version)
+    {
+        $match = preg_match('^PsKill\sv[1-9]\.[0-9][0-9]', $version);
+        $this->assertNotEmpty($match);
     }
 }

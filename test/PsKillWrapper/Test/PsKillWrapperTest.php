@@ -4,12 +4,11 @@ namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
 use PsKillWrapper\Test\Event\TestDispatcher;
-use PsKillWrapper\Test\PsKillWrapperTestCase;
 
+include_once('PsKillWrapperTestCase.php');
 include_once('event\TestDispatcher.php');
-include_once('event\TestListener.php');
 
-class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
+class PsKillWrapperTest extends PsKillWrapperTestCase
 {
 
     /**
@@ -86,6 +85,6 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
     public function testPsKillVersion()
     {
         $version = $this->wrapper->version();
-        $this->assertNotEmpty($version);
+        $this->assertPsKillVersion($version);
     }
 }

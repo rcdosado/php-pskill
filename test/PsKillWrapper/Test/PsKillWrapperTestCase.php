@@ -86,7 +86,8 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Asserts a correct PsKill version string was returned.
+     * Asserts if version method returns something, note that version function
+     * returns either vX.XX or actual version
      *
      * @param $match
      * @internal param type $version The version returned by the USAGE output which contains the version*   The version returned by the USAGE output which contains the version

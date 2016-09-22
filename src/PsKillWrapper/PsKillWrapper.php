@@ -297,4 +297,71 @@ class PsKillWrapper
         return $command->notBypassed() ? $process->getOutput() : '';
     }
 
+    /**
+     * Adds output listener.
+     *
+     * @param Event\PsKillOutputListenerInterface|Event\PsKillOutputListenerInterface $listener
+     *
+     * @return \PsKillWrapper\PsKillWrapper
+     */
+    public function addOutputListener(Event\PsKillOutputListenerInterface $listener)
+    {
+        $this
+            ->getDispatcher()
+            ->addListener(Event\PsKillEvents::PSKILL_OUTPUT, array($listener, 'handleOutput'));
+        return $this;
+    }
+   /**
+     * Adds logger listener listener.
+     *
+     * @param Event\PsKillLoggerListener $listener
+     *
+     * @return PsKillWrapper
+     */
+    public function addLoggerListener(Event\PsKillLoggerListener $listener)
+    {
+        $this
+            ->getDispatcher()
+            ->addSubscriber($listener)
+        ;
+        return $this;
+    }
+
+    /**
+     * Removes an output listener.
+     *
+     * @param \PsKillWrapper\Event\PsKillOutputListenerInterface $listener
+     *
+     * @return \PsKillWrapper\PsKillWrapper
+     */
+    public function removeOutputListener(Event\PsKillOutputListenerInterface $listener)
+    {
+        $this
+            ->getDispatcher()
+            ->removeListener(Event\PsKillEvents::GIT_OUTPUT, array($listener, 'handleOutput'))
+        ;
+        return $this;
+    }
+
+    /**
+     * Set whether or not to stream real-time output to STDOUT and STDERR.
+     *
+     * @param boolean $streamOutput
+     *
+     * @return \PsKillWrapper\PsKillWrapper
+     */
+    public function streamOutput($streamOutput = true)
+    {
+        if ($streamOutput && !isset($this->streamListener)) {
+            $this->streamListener = new Event\PsKillOutputStreamListener();
+            $this->addOutputListener($this->streamListener);
+        }
+
+        if (!$streamOutput && isset($this->streamListener)) {
+            $this->removeOutputListener($this->streamListener);
+            unset($this->streamListener);
+        }
+
+        return $this;
+    }
 }

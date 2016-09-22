@@ -83,24 +83,6 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    public function testVersionExtractFromBanner()
-    {
-
-//        $strs = "PsKill v1.15 - Terminates processes on local or remote systems";
-//        preg_match('/^PsKill\sv[1-9]\.[0-9][0-9]/', $strs, $m);
-//        $version = 'Pskill v1.15';
-//        $expected = gettype($version);
-//        $actual = gettype($m[0]);
-//
-////        echo "Expected : ".serialize($expected)."actual :".serialize($actual);
-//
-////        $this->assertEquals($expected,$actual);
-//        echo "Expected2 : ".serialize($version)."actual2 :".serialize($m[0]);
-//        $this->assertEquals(serialize($version),serialize($m[0]));
-
-
-    }
-
     public function testPsKillVersion()
     {
         $version = $this->wrapper->version();

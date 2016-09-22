@@ -38,7 +38,7 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Generates a random string.
      *
-     * @param type $length
+     * @param int|type $length
      *   The string length, defaults to 8 characters.
      *
      * @return string
@@ -88,12 +88,11 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
     /**
      * Asserts a correct PsKill version string was returned.
      *
-     * @param type $version
-     *   The version returned by the USAGE output which contains the version
+     * @param $match
+     * @internal param type $version The version returned by the USAGE output which contains the version*   The version returned by the USAGE output which contains the version
      */
-    public function assertPsKillVersion($version)
+    public function assertPsKillVersion($match)
     {
-        $match = preg_match('^PsKill\sv[1-9]\.[0-9][0-9]', $version);
         $this->assertNotEmpty($match);
     }
 }

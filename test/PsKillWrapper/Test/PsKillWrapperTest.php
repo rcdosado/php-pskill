@@ -4,11 +4,10 @@ namespace PsKillWrapper\Test;
 
 use PsKillWrapper\PsKillWrapper;
 use PsKillWrapper\Test\Event\TestDispatcher;
-use Symfony\Component\Process\Exception\ProcessFailedException;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\ProcessUtils;
+use PsKillWrapper\Test\PsKillWrapperTestCase;
 
 include_once('event\TestDispatcher.php');
+include_once('event\TestListener.php');
 
 class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 {
@@ -84,16 +83,27 @@ class PsKillWrapperTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    public function testPsKillVersion()
+    public function testVersionExtractFromBanner()
     {
-        $version = $this->wrapper->version();
-        print_r($version);
-//       $this->assertPsKillVersion($version);
 
-//         $user_data_source = 'C:\\dev\\projects\\php-pskill\\src\\PsKillWrapper\\pskill.exe';
-//         $user_data_source = '..\..\..\src\PsKillWrapper\pskill';
+//        $strs = "PsKill v1.15 - Terminates processes on local or remote systems";
+//        preg_match('/^PsKill\sv[1-9]\.[0-9][0-9]/', $strs, $m);
+//        $version = 'Pskill v1.15';
+//        $expected = gettype($version);
+//        $actual = gettype($m[0]);
+//
+////        echo "Expected : ".serialize($expected)."actual :".serialize($actual);
+//
+////        $this->assertEquals($expected,$actual);
+//        echo "Expected2 : ".serialize($version)."actual2 :".serialize($m[0]);
+//        $this->assertEquals(serialize($version),serialize($m[0]));
+
 
     }
 
+    public function testPsKillVersion()
+    {
+        $version = $this->wrapper->version();
+        $this->assertNotEmpty($version);
+    }
 }
-

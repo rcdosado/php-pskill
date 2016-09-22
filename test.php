@@ -15,3 +15,4 @@ EOT;
 
 preg_match('/^PsKill\sv[1-9]\.[0-9][0-9]/', $strs, $m);
 print_r($m);
+echo $m[0];

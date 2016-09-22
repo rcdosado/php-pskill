@@ -230,7 +230,7 @@ class PsKillWrapper
         //         -p    Specifies optional password for user name. If you omit this
         //               you will be prompted to enter a hidden password.
 
-        $this->pskill('DUMMY');
+        $this->pskill('');
         $m = array("PsKill vX.XX");
         $banner = trim($this->error_output);
         if($banner)
@@ -364,4 +364,20 @@ class PsKillWrapper
 
         return $this;
     }
+
+    /**
+     * This method is called during pskill initialization
+     * @param $directory
+     * @param array $options
+     * @return bool
+     */
+    public function init($directory, array $options = array())
+    {
+        if($directory)
+            return true;
+        if($options)
+            return true;
+        return false;
+    }
+
 }

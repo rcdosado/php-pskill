@@ -12,6 +12,7 @@ include_once('event\TestListener.php');
 
 class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
 {
+
     const CONFIG_EMAIL = 'rcdosado@gmail.com';
     const CONFIG_NAME = 'Roy Cyril Dosado';
 

@@ -31,7 +31,6 @@ class PsKillCommandTest extends PsKillWrapperTestCase
         $commandLine = $pskill->getCommandLine();
 
         $this->assertEquals($expected, $commandLine);
-//        $this->assertEquals(1, 1);
     }
 
     public function testOption()
@@ -49,7 +48,7 @@ class PsKillCommandTest extends PsKillWrapperTestCase
     }
 
     /**
-     *
+     * tests for multi command options
      */
     public function testMultiOption()
     {

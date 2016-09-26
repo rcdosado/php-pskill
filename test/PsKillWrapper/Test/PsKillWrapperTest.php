@@ -19,6 +19,7 @@ class PsKillWrapperTest extends PsKillWrapperTestCase
     /**
      * Overrides PHPUnit_Framework_TestCase::setUp().
      */
+
     public function setUp() {
       parent::setUp();
       $this->wrapper = new PsKillWrapper();
@@ -56,9 +57,6 @@ class PsKillWrapperTest extends PsKillWrapperTestCase
         $this->assertNotNull($output);
     }
 
-    /**
-     *
-     */
     public function testSetDispatcher()
     {
         $dispatcher = new TestDispatcher();

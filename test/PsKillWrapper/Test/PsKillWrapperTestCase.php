@@ -5,6 +5,7 @@ namespace PsKillWrapper\Test;
 use PsKillWrapper\Event\PsKillEvents;
 use PsKillWrapper\PsKillWrapper;
 use PsKillWrapper\Test\Event\TestBypassListener;
+use PskillWrapper\PsKillException;
 use Symfony\Component\Filesystem\Filesystem;
 use PsKillWrapper\Test\Event\TestListener;
 
@@ -96,5 +97,25 @@ class PsKillWrapperTestCase extends \PHPUnit_Framework_TestCase
     public function assertPsKillVersion($match)
     {
         $this->assertNotEmpty($match);
+    }
+
+    /**
+     * Executes a bad command.
+     *
+     * @param bool $catchException
+     *   Whether to catch the exception to continue script execution, defaults
+     *   to false.
+     * @throws PsKillException
+     * @throws \Exception
+     */
+    public function runBadCommand($catchException = false)
+    {
+        try {
+            $this->wrapper->pskill('a-bad-command');
+        } catch (PsKillException $e) {
+            if (!$catchException) {
+                throw $e;
+            }
+        }
     }
 }

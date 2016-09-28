@@ -364,7 +364,18 @@ class PsKillWrapper
 
         return $this;
     }
-
+    /**
+     * Returns an object that interacts with a working copy.
+     *
+     * @param string $directory
+     *   Path to the directory containing the working copy.
+     *
+     * @return PsKillWorkingCopy
+     */
+    public function workingCopy($directory)
+    {
+        return new PsKillWorkingCopy($this, $directory);
+    }
     /**
      * This method is called during pskill initialization
      * @param $directory
@@ -373,11 +384,9 @@ class PsKillWrapper
      */
     public function init($directory, array $options = array())
     {
-        if($directory)
-            return true;
-        if($options)
-            return true;
-        return false;
+        $pskill = $this->workingCopy($directory);
+        $pskill->init($options);
+        return $pskill;
     }
 
 }
